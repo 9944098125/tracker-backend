@@ -1,0 +1,59 @@
+######### CREATE FENCE
+POST http://localhost:5000/api/fence
+Content-Type: application/json
+
+{
+  "name":"fence 5",
+  "paths":"[{lat: 20.59378248012731, lng: 78.9628603703577}, {lat: 20.234234, lng: 78.345345345345}]",
+  "place":"venkat nagar, Chennai, Tamil Nadu, India"
+}
+
+######### GET FENCES  
+GET http://localhost:5000/api/fences
+Content-Type: application/json
+
+########### CREATE USER
+POST http://localhost:5000/api/user
+Content-Type: application/json
+
+{
+  "name":"Kumara Subramanyam",
+  "email":"ksb@vulcanflow.com",
+  "password":"Srinivas@8",
+  "photo":"https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aGFwcHklMjB3b21hbnxlbnwwfHwwfHx8MA%3D%3D",
+  "department":"Management & Administration",
+  "branch":"Hyderabad",
+  "isActive":true
+}
+
+####### GET USERS BY DEPT AND BRANCH
+GET http://localhost:5000/api/users/branch/dept
+Content-Type: application/json
+
+######GET USERS BY NAMES WITH SPECIFIC BRANCH AND DEPARTMENT
+GET http://localhost:5000/api/users/names
+Content-Type: application/json
+
+{
+  "branch":"Hyderabad",
+  "department":"Management & Administration"
+}
+
+########### ASSIGN USER TO FENCE
+POST http://localhost:5000/api/assignUserToFence
+Content-Type: application/json
+
+{
+  "fenceName":"new fence",
+  "branch":"Visakhapatnam",
+  "department":"IT",
+  "username":"ASP"
+}
+
+########### GET ACTIVE USERS BY FENCE NAME
+GET http://localhost:5000/api/getActiveUsers/vizag fence
+Content-Type: application/json
+
+############ GET GEO LOCATION ACCORDING TO DATE AND TIME
+GET http://localhost:5000/api/getCoordinates/2024-04-24/8:00/1
+Content-Type: application/json
